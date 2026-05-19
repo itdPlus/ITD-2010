@@ -5,8 +5,7 @@
 -----
 ## Установка и запуск
 ### 1\. Клонируй репозиторий
-git clone https://github.com/itdPlus/ITD-2010\
-cd ITD-2010
+git clone https://github.com/itdPlus/ITD-2010
 ### 2\. Получение refresh\_token
 Это токен сессии на сайте. Он нужен единожды для входа в аккаунт.
 
@@ -16,11 +15,7 @@ cd ITD-2010
 1. Пролистай ниже до значения refresh\_token и скопируй его в **config.js**
 
 ![](refreshToken.jpeg)
-### 3\. **Открой config.js и вставь токен:**
-module.exports = {\
-`    `REFRESH\_TOKEN: 'сюда\_вставь\_свой\_токен',\
-`    `PORT: 3000,\
-};
+### 3\. **Открой config.js и вставь токен**
 ### 4\. Запусти прокси
 node proxy.js
 
