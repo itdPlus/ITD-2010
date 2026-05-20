@@ -12,7 +12,7 @@ git clone https://github.com/itdPlus/ITD-2010
 1. Открой [](https://xn--d1ah4a.com)[итд.com](https://xn--d1ah4a.com/) в браузере и войди в аккаунт
 1. Открой DevTools (F12)
 1. Перейди во вкладку **Сеть,** и найди запрос **/refresh**
-1. Пролистай ниже до значения refresh\_token и скопируй его в **config.js**
+1. Пролистай ниже до значения refresh\_token и скопируй его в **config.js** (без refresh\_token=)
 
 ![](refreshToken.jpeg)
 ### 3\. **Открой config.js и вставь токен**
