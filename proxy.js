@@ -114,7 +114,11 @@ function sendProxy(req, res, body, headers) {
                 });
                 retryRes.pipe(res);
             });
-            retry.on('error', e => { res.writeHead(502); res.end(e.message); });
+            retry.on('error', e => {
+                if (res.headersSent) return;
+                res.writeHead(502, { 'content-type': 'application/json'});
+                res.end(JSON.stringify({ error: e.message }));
+            });
             if (body.length) retry.write(body);
             return retry.end();
         }
@@ -127,6 +131,7 @@ function sendProxy(req, res, body, headers) {
     });
 
     proxyReq.on('error', e => {
+        if (res.headersSent) return;
         res.writeHead(502, { 'content-type': 'application/json' });
         res.end(JSON.stringify({ error: e.message }));
     });
